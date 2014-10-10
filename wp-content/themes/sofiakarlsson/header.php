@@ -55,16 +55,48 @@
 
 </head>
 <body <?php body_class(); ?>>
+
+<?php if( is_home() || is_front_page() ): ?>
+
+	<?php
+	$slideshow = get_field('slideshow', 'options');
+	
+	if (count($slideshow) > 1) {
+		$rand = array_rand($slideshow, 1);
+		$image_url = $slideshow[$rand]['url'];
+		
+	} else {
+		$image_url = $slideshow[0]['url'];
+	}
+	?>
+
+	<?php if( $slideshow ): ?>
+	<img id="bg" src="<?php echo $image_url; ?>" />
+	
+	<?php endif; ?>
+	
+<? endif; ?>
+
 <section id="site">
 	<header id="header">
+	
+		<nav id="responsive-nav">
+			<?php language_selector_names(); ?>
+		</nav>
+	
 		<div class="container">
-			<div class="col-md-8 logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			 		<img class="no-ie img-responsive" src="<?php echo get_template_directory_uri();?>/ui/images/SK_logo_white.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-			    </a>
-			</div>
-			<div class="col-md-4 lang-nav">
-				<?php language_selector_names(); ?>
+			<div class="row">
+				<div class="col-sm-8 col-xs-4 logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				 		<img class="no-ie img-responsive" src="<?php echo get_template_directory_uri();?>/ui/images/SK_logo_white.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				    </a>
+				</div>
+				<div class="col-sm-4 col-xs-8">
+					<a id="nav-toggle" href="#" class="no-click visible-sm visible-xs"><span></span></a>
+					<div class="hidden-sm hidden-xs">
+						<?php language_selector_names(); ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>

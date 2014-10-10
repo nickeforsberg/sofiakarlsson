@@ -18,7 +18,7 @@
 	<?php if($title): ?>
 	<div class="row">
 		<?php foreach( $images as $image ): ?>
-		<div class="image-box col-sm-3">
+		<div class="image-box col-sm-3 col-xs-6">
 			<a href="<?php echo $image['url']; ?>" rel="group" class="fancybox-media">
 				<img class="img-responsive" src="<?php echo $image['sizes']['image_gallery']; ?>" alt="<?php echo $image['alt']; ?>" />
 			</a>

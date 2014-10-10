@@ -30,7 +30,38 @@
 
 ------------------------------------------------ */
 
-html{width: 100%; height: 100%; min-height: 100%;}
+html{width: 100%; height: 100%; min-height: 100%;
+
+	&.nav-active{
+		#header{
+			#nav-toggle{
+				span {
+					background-color: transparent;
+				
+					&:before, &:after {
+						top: 0;
+					}
+				
+					&:before {
+						-webkit-transform: rotate(45deg);
+						-moz-transform: rotate(45deg);
+						-o-transform: rotate(45deg);
+						-ms-transform: rotate(45deg);
+						transform: rotate(45deg);
+					}
+					&:after {
+						-webkit-transform: rotate(-45deg);
+						-moz-transform: rotate(-45deg);
+						-o-transform: rotate(-45deg);
+						-ms-transform: rotate(-45deg);
+						transform: rotate(-45deg);
+					}
+				}	
+			}
+		}
+		#header #responsive-nav{display: block; opacity: 1;}
+	}
+}
 
 body{margin: 0; padding: 0; color: #fff; font-size: 16px; line-height: 22px; font-weight: 400; background-color: @blueGreen; font-family: 'Istok Web', sans-serif;
 
@@ -41,6 +72,8 @@ body{margin: 0; padding: 0; color: #fff; font-size: 16px; line-height: 22px; fon
 
 	&.home{width: 100%; height: 100%;}
 }
+
+#bg{display: none !important; z-index: -1;}
 
 
 
@@ -109,7 +142,7 @@ body.home #site{width: 100%; height: 100%; min-height: 100%;}
 
 body.admin-bar #header.stuck{top: 32px;}
 
-#header{position: fixed; width: 100%; background: transparent; z-index: 10;
+#header{position: fixed; width: 100%; background: transparent; z-index: 10; min-height: 45px;
 
 	-webkit-transition: height 0.2s ease;
 	-moz-transition: height 0.2s ease;
@@ -122,12 +155,35 @@ body.admin-bar #header.stuck{top: 32px;}
 	-ms-transition: background 0.2s ease;
 	-o-transition: background 0.2s ease;
 	transition: background 0.2s ease; 
+	
+	
+	#responsive-nav{display: none; opacity: 0; width: 100%; position: fixed; top: 35px; background: @black;
+
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease; 
+
+
+		ul.lang-menu{list-style: none; text-align: center; padding: 0; margin: 15px 0;
+			li{color: @white; margin-bottom: 5px; font-size: 18px; line-height: 22px; text-decoration: none;
+				a{color: @white; text-decoration: none;
+					&.active{text-decoration: none;}
+				}
+			}
+		}
+	}
+	
 
 	&.stuck{position: fixed; width: 100%; background: @blueGreen;
 		
 		-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.55);
 		-moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.55);
 		box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.55);
+		
+		
+		#responsive-nav{background: @blueGreen;}
 	
 		> .container{
 			
@@ -143,7 +199,42 @@ body.admin-bar #header.stuck{top: 32px;}
 		}	
 	}
 	
-	> .container{padding-top: 15px; padding-bottom: 15px;
+	> .container{padding-top: 15px; padding-bottom: 15px; position: relative;
+	
+	
+		#nav-toggle {
+			border: none;
+			position: fixed;
+			top: 20px;
+			right: 43px;
+			cursor: pointer;
+			padding: 0;
+		
+			& span, & span:before, & span:after {
+				position: absolute;
+				height: 5px;
+				width: 35px;
+				display: block;
+				background: @white;
+				border-radius: 1px;
+				content: '';
+			 	
+			 	-webkit-transition: all 300ms ease-in-out;
+			 	-moz-transition: all 300ms ease-in-out;
+			 	-o-transition: all 300ms ease-in-out;
+			 	-ms-transition: all 300ms ease-in-out;
+			 	transition: all 300ms ease-in-out;
+			}
+		
+			& span:before {
+				top: -10px;
+			}
+		
+			& span:after {
+				bottom: -10px;
+			}
+		}
+	
 	
 		.logo{
 			
@@ -159,7 +250,7 @@ body.admin-bar #header.stuck{top: 32px;}
 		}
 	
 		ul.lang-menu{text-align: right; list-style: none;
-			li{display: inline-block; margin-right: 5px; font-size: 11px; line-height: normal; text-transform: uppercase; opacity: 1; border-bottom: 1px solid @white;
+			li{display: inline-block; margin-right: 5px; font-size: 11px; line-height: 26px; text-transform: uppercase; opacity: 1; border-bottom: 1px solid @white;
 				&.active{opacity: 0.2; border-bottom: 0;}
 				a{text-decoration: none;}
 			}	
@@ -189,8 +280,10 @@ body.admin-bar #header.stuck{top: 32px;}
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		margin-top: -203px;
+		margin-top: -148px;
 		margin-left: -421px;
+		
+		a{display: block;}
 		
 		img{width: 842px; height: 214px;}
 		a.fa{display: block; margin: 20px auto; text-align: center; font-size: 42px; color: @white; border: none; text-decoration: none;
@@ -280,20 +373,118 @@ body.admin-bar #header.stuck{top: 32px;}
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-
 	
+	#header{background: @black; z-index: 300;
+		> .container{width: 100%; padding: 7px;}
+	}
 	
 }
+
+/* IPAD RETINA in portrait & landscape */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+	
+	body{background: none !important;}
+	
+	#bg{
+		display: block !important;
+		position: fixed; 
+		top: 0; 
+		left: 0; 
+		
+		/* Preserve aspet ratio */
+		min-width: 100%;
+		min-height: 100%;
+	}
+	#cover-area .placeholder{margin-left: -392px;}	
+	
+}
+
+/* IPAD NON-RETINA */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio: 1){
+	
+	body{background: none !important;}
+	
+	#bg{
+		display: block !important;
+		position: fixed; 
+		top: 0; 
+		left: 0; 
+		
+		/* Preserve aspet ratio */
+		min-width: 100%;
+		min-height: 100%;
+	}
+	
+	#cover-area .placeholder{margin-left: -392px;}	
+	
+}
+
+
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+
+	#header{background: @black; z-index: 300;
+		> .container{padding: 7px;}
+	}
 	
+	#cover-area .placeholder{margin-left: 0; left: 0;}
 	
+	#content .blurbs{margin: 0;}
+}
+
+
+
+/* iPhone 5 + in portrait & landscape */
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {
+
+	h1{font-size: 34px; line-height: normal;}
+	h2{font-size: 24px; line-height: normal;}
+	h3{font-size: 20px; line-height: normal;}
+	
+	body{background: none !important;}
+	
+	#bg{
+		display: block !important;
+		position: fixed; 
+		top: 0; 
+		left: 0; 
+		
+		/* Preserve aspet ratio */
+		min-width: 100%;
+		min-height: 100%;
+	}
 	
 }
+
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+
+	body{font-size: 13px; line-height: 19px;}
+
+	h1{font-size: 34px; line-height: normal;}
+	h2{font-size: 24px; line-height: normal;}
+	h3{font-size: 20px; line-height: normal;}
+	
+	#header{background: @black; z-index: 300;
+		> .container{padding: 7px;}
+	}
+	
+	#cover-area .placeholder a.fa{margin: 5px 0; font-size: 32px;}
+	
+	#content .blurbs{margin: 0;}
 	
 }
 

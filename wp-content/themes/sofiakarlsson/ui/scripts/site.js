@@ -7,6 +7,24 @@ jQuery(function($){
 		site = $('html, body'),
 		window_width = $( window ).width();
 	
+	
+	//noClick
+	function noClick() {
+		var noClick = $('.no-click');
+		noClick.on('click', function(e) {
+			e.preventDefault();
+		});
+	}
+	noClick();
+	
+	function navToggle() {
+		var openMenu = $('a#nav-toggle');
+		openMenu.on('click', function() {
+			$('html').toggleClass('nav-active');
+		});	
+	}
+	navToggle();
+	
 	function reponsiveImages () {
 		$('img').addClass('img-responsive');
 	}

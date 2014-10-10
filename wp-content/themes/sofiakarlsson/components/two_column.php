@@ -11,7 +11,7 @@
 	<div class="row blurbs">
 	
 		<?php if ( $title_left || $content_left ) : ?>
-			<div class="col-sm-6 blurb">
+			<div class="col-md-6 blurb">
 				<?php if($title_left): ?>
 				<h2><?php echo $title_left; ?></h2>
 				<?php endif; ?>
@@ -21,7 +21,7 @@
 		<?php endif; ?>
 		
 		<?php if ( $title_right || $content_right ) : ?>
-			<div class="col-sm-6 blurb">
+			<div class="col-md-6 blurb">
 				<?php if($title_right): ?>
 				<h2><?php echo $title_right; ?></h2>
 				<?php endif; ?>
