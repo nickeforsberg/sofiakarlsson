@@ -46,6 +46,9 @@ jQuery(function($){
 			  	autoSize	: false,
 			  	closeClick	: true,
 				helpers : {
+					overlay: {
+				      locked: false
+				    },
 					media : {}
 				}
 		});
@@ -62,7 +65,7 @@ jQuery(function($){
 	
 	$window.bind('scroll', function() {
     	var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = $('#cover-area').height(),
+            shrinkOn = $('#cover-area').height() - 30,
             header = document.querySelector("header");
         if (distanceY > shrinkOn) {
             classie.add(header,"stuck");

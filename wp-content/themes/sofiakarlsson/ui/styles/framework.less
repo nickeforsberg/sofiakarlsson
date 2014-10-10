@@ -123,22 +123,41 @@ body.admin-bar #header.stuck{top: 32px;}
 	-o-transition: background 0.2s ease;
 	transition: background 0.2s ease; 
 
-	&.stuck{position: fixed; width: 100%; background: @white;
+	&.stuck{position: fixed; width: 100%; background: @blueGreen;
 		
-		-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-		-moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-		box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.55);
+		-moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.55);
+		box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.55);
 	
 		> .container{
+			
+			.logo{
+				img{opacity: 1;}
+			}
+		
 			ul.lang-menu{margin: 0;
-				li{border-bottom: 1px solid @black; color: @black;
-					a{color: @black;}
+				li{border-bottom: 1px solid @white; color: @white;
+					a{color: @white;}
 				}
 			}	
 		}	
 	}
 	
 	> .container{padding-top: 15px; padding-bottom: 15px;
+	
+		.logo{
+			
+			img{opacity: 0; width: 114px; height: 30px;
+			
+				-webkit-transition: opacity 0.2s ease;
+				-moz-transition: opacity 0.2s ease;
+				-ms-transition: opacity 0.2s ease;
+				-o-transition: opacity 0.2s ease;
+				transition: opacity 0.2s ease; 
+				
+			}
+		}
+	
 		ul.lang-menu{text-align: right; list-style: none;
 			li{display: inline-block; margin-right: 5px; font-size: 11px; line-height: normal; text-transform: uppercase; opacity: 1; border-bottom: 1px solid @white;
 				&.active{opacity: 0.2; border-bottom: 0;}
@@ -183,19 +202,19 @@ body.admin-bar #header.stuck{top: 32px;}
 			transition: all 0.2s ease-in-out;
 		
 			&:hover{
-				-webkit-transform: scale(1.5);
-				-moz-transform: scale(1.5);
-				-o-transform: scale(1.5);
-				-ms-transform: scale(1.5);
-				transform: scale(1.5);
+				-webkit-transform: scale(1.2);
+				-moz-transform: scale(1.2);
+				-o-transform: scale(1.2);
+				-ms-transform: scale(1.2);
+				transform: scale(1.2);
 			}
 		}
 	}
 }
 
-#content {background: @blueGreen; position: relative; z-index: 5;
+#content {background: @blueGreen; position: relative; z-index: 5; margin-top: 30px;
 	
-	&:after{								  
+	&:before{								  
 	  bottom: 100%;						  
 	  left: 50%;							  
 	  border: solid transparent;			  
@@ -220,7 +239,7 @@ body.admin-bar #header.stuck{top: 32px;}
 
 
 .page-component{
-	&:first-child{padding-top: 60px;}
+	&:first-child{padding-top: 30px;}
 	&.image_gallery{
 		.image-box{
 			img{margin-bottom: 30px;}
