@@ -1,0 +1,14 @@
+/*
+Theme Name: sofiakarlsson
+Description: Used to style the TinyMCE editor.
+*/
+
+/**
+ * 1.0 Body
+ * ----------------------------------------------------------------------------
+ */
+
+html .mceContentBody {
+	font-size: 100%;
+	max-width: 750px;
+}
