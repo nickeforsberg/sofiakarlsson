@@ -56,6 +56,15 @@
 </head>
 <body <?php body_class(); ?>>
 
+<?php
+$header_scripts = get_field('header_scripts', 'options');
+
+if($header_scripts):
+	echo $header_scripts;
+endif;
+
+?>
+
 <?php if( is_home() || is_front_page() ): ?>
 
 	<?php
