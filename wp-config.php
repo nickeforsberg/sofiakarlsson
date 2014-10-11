@@ -68,7 +68,7 @@ $table_prefix  = 'sk14_';
  * Det är rekommderat att man som tilläggsskapare och temaskapare använder WP_DEBUG 
  * i sin utvecklingsmiljö. 
  */ 
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* Det var allt, sluta redigera här! Blogga på. */
 

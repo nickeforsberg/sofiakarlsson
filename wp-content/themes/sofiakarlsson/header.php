@@ -9,7 +9,7 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/ui/images/favicon.ico" type="image/x-icon">
+<link href="<?php bloginfo('template_directory'); ?>/ui/images/favicon.ico" rel="icon" type="image/x-icon" />
 <link href='//fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory'); ?>/ui/styles/bootstrap.css">
