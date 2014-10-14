@@ -56,6 +56,15 @@
 </head>
 <body <?php body_class(); ?>>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&appId=1516541798588138&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <?php
 $header_scripts = get_field('header_scripts', 'options');
 
@@ -91,20 +100,88 @@ endif;
 	
 		<nav id="responsive-nav">
 			<?php language_selector_names(); ?>
+			
+			<div class="social">
+				<?php 
+				$facebook = get_field('facebook', 'options');
+				$instagram = get_field('instagram', 'options');
+				$youtube = get_field('youtube', 'options');
+				$twitter = get_field('twitter', 'options');
+				?>
+				<?php if($facebook): ?>
+					<a href="<?php echo $facebook; ?>" target="_blank">
+						<i class="fa fa-facebook-square"></i>
+					</a>
+				<?php endif; ?>
+				
+				<?php if($instagram): ?>
+					<a href="<?php echo $instagram; ?>" target="_blank">
+						<i class="fa fa-instagram"></i>
+					</a>
+				<?php endif; ?>
+				
+				<?php if($youtube): ?>
+					<a href="<?php echo $youtube; ?>" target="_blank">
+						<i class="fa fa-youtube"></i>
+					</a>
+				<?php endif; ?>
+				
+				<?php if($twitter): ?>
+					<a href="<?php echo $twitter; ?>" target="_blank">
+						<i class="fa fa-twitter-square"></i>
+					</a>
+				<?php endif; ?>
+			</div>
+			
 		</nav>
 	
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-xs-4 logo">
+				<div class="col-sm-2 col-xs-4 logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				 		<img class="no-ie img-responsive" src="<?php echo get_template_directory_uri();?>/ui/images/SK_logo_white.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 				    </a>
 				</div>
-				<div class="col-sm-4 col-xs-8">
+				<div class="col-sm-8 col-xs-8">
 					<a id="nav-toggle" href="#" class="no-click visible-sm visible-xs"><span></span></a>
 					<div class="hidden-sm hidden-xs">
 						<?php language_selector_names(); ?>
 					</div>
+				</div>
+				<div class="social col-md-2 hidden-sm hidden-xs">
+					
+					<div class="pull-right">
+						<?php 
+							$facebook = get_field('facebook', 'options');
+							$instagram = get_field('instagram', 'options');
+							$youtube = get_field('youtube', 'options');
+							$twitter = get_field('twitter', 'options');
+						?>
+						<?php if($facebook): ?>
+							<a href="<?php echo $facebook; ?>" target="_blank">
+								<i class="fa fa-facebook-square"></i>
+							</a>
+						<?php endif; ?>
+						
+						<?php if($instagram): ?>
+							<a href="<?php echo $instagram; ?>" target="_blank">
+								<i class="fa fa-instagram"></i>
+							</a>
+						<?php endif; ?>
+						
+						<?php if($youtube): ?>
+							<a href="<?php echo $youtube; ?>" target="_blank">
+								<i class="fa fa-youtube"></i>
+							</a>
+						<?php endif; ?>
+						
+						<?php if($twitter): ?>
+							<a href="<?php echo $twitter; ?>" target="_blank">
+								<i class="fa fa-twitter-square"></i>
+							</a>
+						<?php endif; ?>
+					</div>
+					
 				</div>
 			</div>
 		</div>

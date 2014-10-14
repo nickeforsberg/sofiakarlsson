@@ -15,7 +15,6 @@ if ( !defined( 'THEME_TEXTDOMAIN' ) ) {
  * Require the external utilities
  * 
  */
-
 require_once( 'inc/tinymce.php' );
 
 
@@ -85,6 +84,43 @@ function language_selector_names(){
         echo '</ul>';
     }
 }
+
+
+/*
+* FB Feed JSON
+* 
+*/
+
+function fb_json_feed(){
+
+	$page_id = '153629500765';
+	$access_token = '1516541798588138|hAN1bgyCObHLYZiMqUn-zO-3eL8';
+	//Get the JSON
+	$json_object = @file_get_contents('https://graph.facebook.com/' . $page_id . 
+	'/posts?access_token=' . $access_token);
+	//Interpret data
+	$fbdata = json_decode($json_object);
+	
+	//var_dump($fbdata);
+	
+	$count = 0;
+	$max = 5;
+	foreach ($fbdata->data as $post ){
+		//var_dump($post);
+		if ($count++ == $max) break;
+		$posts .= '<p><a href="' . $post->link . '" target="_blank">' . $post->message . '</a></p>';	
+	}
+	//Display the posts
+	return $posts;
+	
+}
+
+
+function register_shortcodes(){
+   add_shortcode('fb_feed', 'fb_json_feed');
+}
+add_action( 'init', 'register_shortcodes');
+ 
 
 
 

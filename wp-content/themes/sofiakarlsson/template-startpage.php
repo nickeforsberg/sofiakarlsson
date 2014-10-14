@@ -18,6 +18,7 @@ get_header();
 
 <section id="content" role="main">
 	<div class="container main">
+		
 		<?php
 	        if( have_rows('components') && !post_password_required() ) :
 	            while( have_rows( "components" ) ) : the_row(); 
