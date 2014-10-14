@@ -108,7 +108,7 @@ function fb_json_feed(){
 	foreach ($fbdata->data as $post ){
 		//var_dump($post);
 		if ($count++ == $max) break;
-		$posts .= '<p><a href="' . $post->link . '" target="_blank">' . $post->message . '</a></p>';	
+		$posts .= '<center><p><a href="' . $post->link . '" target="_blank">' . $post->message . '</a></p><center>';	
 	}
 	//Display the posts
 	return $posts;
