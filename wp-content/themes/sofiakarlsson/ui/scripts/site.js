@@ -66,8 +66,7 @@ jQuery(function($){
 				helpers : {
 					overlay: {
 				      locked: false
-				    },
-					media : {}
+				    }
 				}
 		});
 	    
