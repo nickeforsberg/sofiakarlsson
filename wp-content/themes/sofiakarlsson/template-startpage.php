@@ -9,7 +9,7 @@ get_header();
 
 <section id="cover-area">
 	<div class="placeholder">
-		<img class="no-ie" src="<?php echo get_template_directory_uri();?>/ui/images/RFUO_white.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+		<img class="no-ie" src="<?php echo get_template_directory_uri();?>/ui/images/SK_logo_white.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 	    <a href="#content" class="scroll-to fa fa-chevron-circle-down"></a>
 	</div>
 </section>
