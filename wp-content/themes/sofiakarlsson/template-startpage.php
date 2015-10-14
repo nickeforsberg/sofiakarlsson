@@ -2,7 +2,7 @@
 /*
 Template Name: Startpage
 */
- 
+
 get_header();
 
 ?>
@@ -16,10 +16,10 @@ get_header();
 
 <section id="content" role="main">
 	<div class="container main">
-		
+
 		<?php
 	        if( have_rows('components') && !post_password_required() ) :
-	            while( have_rows( "components" ) ) : the_row(); 
+	            while( have_rows( "components" ) ) : the_row();
 		            echo get_template_part( 'components/' . get_row_layout() );
 				endwhile;
 	        endif;

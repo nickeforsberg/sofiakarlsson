@@ -23,15 +23,15 @@
 <![endif]-->
 
 
-<?php if( is_home() || is_front_page() ): ?>
+<?php if( is_home() || is_front_page() || is_page_template('template-startpage.php') ): ?>
 
 	<?php
 	$slideshow = get_field('slideshow', 'options');
-	
+
 	if (count($slideshow) > 1) {
 		$rand = array_rand($slideshow, 1);
 		$image_url = $slideshow[$rand]['url'];
-		
+
 	} else {
 		$image_url = $slideshow[0]['url'];
 	}
@@ -49,7 +49,7 @@
 	}
 	</style>
 	<?php endif; ?>
-	
+
 <? endif; ?>
 
 </head>
@@ -73,15 +73,15 @@ endif;
 
 ?>
 
-<?php if( is_home() || is_front_page() ): ?>
+<?php if( is_home() || is_front_page() || is_page_template('template-startpage.php') ): ?>
 
 	<?php
 	$slideshow = get_field('slideshow', 'options');
-	
+
 	if (count($slideshow) > 1) {
 		$rand = array_rand($slideshow, 1);
 		$image_url = $slideshow[$rand]['url'];
-		
+
 	} else {
 		$image_url = $slideshow[0]['url'];
 	}
@@ -89,19 +89,19 @@ endif;
 
 	<?php if( $slideshow ): ?>
 	<img id="bg" src="<?php echo $image_url; ?>" />
-	
+
 	<?php endif; ?>
-	
+
 <? endif; ?>
 
 <section id="site">
 	<header id="header">
-	
+
 		<nav id="responsive-nav">
 			<?php language_selector_names(); ?>
-			
+
 			<div class="social">
-				<?php 
+				<?php
 				$facebook = get_field('facebook', 'options');
 				$instagram = get_field('instagram', 'options');
 				$youtube = get_field('youtube', 'options');
@@ -112,28 +112,28 @@ endif;
 						<i class="fa fa-facebook-square"></i>
 					</a>
 				<?php endif; ?>
-				
+
 				<?php if($instagram): ?>
 					<a href="<?php echo $instagram; ?>" target="_blank">
 						<i class="fa fa-instagram"></i>
 					</a>
 				<?php endif; ?>
-				
+
 				<?php if($youtube): ?>
 					<a href="<?php echo $youtube; ?>" target="_blank">
 						<i class="fa fa-youtube"></i>
 					</a>
 				<?php endif; ?>
-				
+
 				<?php if($twitter): ?>
 					<a href="<?php echo $twitter; ?>" target="_blank">
 						<i class="fa fa-twitter-square"></i>
 					</a>
 				<?php endif; ?>
 			</div>
-			
+
 		</nav>
-	
+
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-2 col-xs-4 logo">
@@ -148,9 +148,9 @@ endif;
 					</div>
 				</div>
 				<div class="social col-md-2 hidden-sm hidden-xs">
-					
+
 					<div class="pull-right">
-						<?php 
+						<?php
 							$facebook = get_field('facebook', 'options');
 							$instagram = get_field('instagram', 'options');
 							$youtube = get_field('youtube', 'options');
@@ -161,29 +161,29 @@ endif;
 								<i class="fa fa-facebook-square"></i>
 							</a>
 						<?php endif; ?>
-						
+
 						<?php if($instagram): ?>
 							<a href="<?php echo $instagram; ?>" target="_blank">
 								<i class="fa fa-instagram"></i>
 							</a>
 						<?php endif; ?>
-						
+
 						<?php if($youtube): ?>
 							<a href="<?php echo $youtube; ?>" target="_blank">
 								<i class="fa fa-youtube"></i>
 							</a>
 						<?php endif; ?>
-						
+
 						<?php if($twitter): ?>
 							<a href="<?php echo $twitter; ?>" target="_blank">
 								<i class="fa fa-twitter-square"></i>
 							</a>
 						<?php endif; ?>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
 	</header>
-	
+
 
