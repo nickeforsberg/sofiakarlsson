@@ -4,7 +4,7 @@
  *
  * Denna fil innehåller följande konfigurationer: Inställningar för MySQL,
  * Tabellprefix, Säkerhetsnycklar, WordPress-språk, och ABSPATH.
- * Mer information på {@link http://codex.wordpress.org/Editing_wp-config.php 
+ * Mer information på {@link http://codex.wordpress.org/Editing_wp-config.php
  * Editing wp-config.php}. MySQL-uppgifter får du från ditt webbhotell.
  *
  * Denna fil används av wp-config.php-genereringsskript under installationen.
@@ -61,13 +61,13 @@ define('NONCE_SALT',       'YW.=C2enqB/[W8+Uk.V@s,EZb94OCrB.wWl3W]Y(jNzMw!aQ%-Fe
  */
 $table_prefix  = 'sk14_';
 
-/** 
- * För utvecklare: WordPress felsökningsläge. 
- * 
- * Ändra detta till true för att aktivera meddelanden under utveckling. 
- * Det är rekommderat att man som tilläggsskapare och temaskapare använder WP_DEBUG 
- * i sin utvecklingsmiljö. 
- */ 
+/**
+ * För utvecklare: WordPress felsökningsläge.
+ *
+ * Ändra detta till true för att aktivera meddelanden under utveckling.
+ * Det är rekommderat att man som tilläggsskapare och temaskapare använder WP_DEBUG
+ * i sin utvecklingsmiljö.
+ */
 define('WP_DEBUG', false);
 
 /* Det var allt, sluta redigera här! Blogga på. */
