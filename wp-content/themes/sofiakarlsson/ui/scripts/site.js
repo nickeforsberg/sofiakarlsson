@@ -1,13 +1,13 @@
 /* Global site jquery */
 jQuery(function($){
 	"use strict";
-	
+
 	var $window = $(window),
 		isTouch = ( 'ontouchstart' in document.documentElement ),
 		site = $('html, body'),
 		window_width = $( window ).width();
-	
-	
+
+
 	//noClick
 	function noClick() {
 		var noClick = $('.no-click');
@@ -16,20 +16,20 @@ jQuery(function($){
 		});
 	}
 	noClick();
-	
+
 	function navToggle() {
 		var openMenu = $('a#nav-toggle');
 		openMenu.on('click', function() {
 			$('html').toggleClass('nav-active');
-		});	
+		});
 	}
 	navToggle();
-	
+
 	function reponsiveImages () {
 		$('img').addClass('img-responsive');
 	}
 	reponsiveImages();
-	
+
 	function aScrollTo() {
 		$('a.scroll-to').click(function(e) {
 			e.preventDefault();
@@ -40,21 +40,21 @@ jQuery(function($){
 		});
 	}
 	aScrollTo();
-	
-	
-	
+
+
+
 	function offsetTop() {
 		var distance = $('div').offset().top;
 	}
 	offsetTop();
-	
-	
+
+
 	$(".fancybox-media").fancybox({
 		padding : 0
 	});
-	
+
 	// Fancybox
-	if ( window_width > 767 ) {   
+	if ( window_width > 767 ) {
 	    $( '.fancybox-media' ).fancybox({
 	    		padding		: 0,
 		   		maxWidth	: 800,
@@ -69,17 +69,17 @@ jQuery(function($){
 				    }
 				}
 		});
-	    
+
 	    $( ".popup" ).fancybox({
 		    nextEffect : 'fade',
 		    prevEffect : 'fade'
 	    });
-	    
+
     } else {
 	    $( '.fancybox-media, .popup' ).attr( 'target', '_blank' );
     }
-	
-	
+
+
 	$window.bind('scroll', function() {
     	var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = $('#cover-area').height() - 30,
@@ -90,7 +90,7 @@ jQuery(function($){
             if (classie.has(header,"stuck")) {
                 classie.remove(header,"stuck");
             }
-        }   
+        }
 	});
 
 });
