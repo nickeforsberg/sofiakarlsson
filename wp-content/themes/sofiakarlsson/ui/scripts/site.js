@@ -18,9 +18,10 @@ jQuery(function($){
 	noClick();
 
 	function navToggle() {
-		var openMenu = $('a#nav-toggle');
-		openMenu.on('click', function() {
-			$('html').toggleClass('nav-active');
+		var openMenu = $('a.menu-toggle');
+		openMenu.on('click', function(e) {
+			e.preventDefault();
+			$('body').toggleClass('off-canvas-active');
 		});
 	}
 	navToggle();
@@ -80,7 +81,7 @@ jQuery(function($){
     }
 
 
-	$window.bind('scroll', function() {
+	/*$window.bind('scroll', function() {
     	var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = $('#cover-area').height() - 30,
             header = document.querySelector("header");
@@ -91,6 +92,6 @@ jQuery(function($){
                 classie.remove(header,"stuck");
             }
         }
-	});
+	});*/
 
 });

@@ -10,9 +10,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="<?php bloginfo('template_directory'); ?>/ui/images/favicon.ico" rel="icon" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory'); ?>/ui/styles/bootstrap.css">
-<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory'); ?>/ui/styles/bootstrap-theme.css">
 
 <?php wp_head(); ?>
 
@@ -94,93 +91,70 @@ endif;
 
 <? endif; ?>
 
+<nav class="off-canvas-navigation" role="navigation">
+	<div class="container-fluid scroll">
+		<h3><?php _e('Menu', THEME_TEXTDOMAIN); ?></h3>
+		<ul>
+			<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'depth' => 1,
+						'container' => false,
+						'items_wrap' => '%3$s'
+					)
+				);
+			?>
+		</ul>
+		<?php language_selector_names(); ?>
+		<div class="social">
+			<?php
+			$facebook = get_field('facebook', 'options');
+			$instagram = get_field('instagram', 'options');
+			$youtube = get_field('youtube', 'options');
+			$twitter = get_field('twitter', 'options');
+			?>
+			<?php if($facebook): ?>
+				<a href="<?php echo $facebook; ?>" target="_blank">
+					<i class="fa fa-facebook-square"></i>
+				</a>
+			<?php endif; ?>
+
+			<?php if($instagram): ?>
+				<a href="<?php echo $instagram; ?>" target="_blank">
+					<i class="fa fa-instagram"></i>
+				</a>
+			<?php endif; ?>
+
+			<?php if($youtube): ?>
+				<a href="<?php echo $youtube; ?>" target="_blank">
+					<i class="fa fa-youtube"></i>
+				</a>
+			<?php endif; ?>
+
+			<?php if($twitter): ?>
+				<a href="<?php echo $twitter; ?>" target="_blank">
+					<i class="fa fa-twitter-square"></i>
+				</a>
+			<?php endif; ?>
+		</div>
+
+	</div>
+</nav>
+
 <section id="site">
 	<header id="header">
-
-		<nav id="responsive-nav">
-			<?php language_selector_names(); ?>
-
-			<div class="social">
-				<?php
-				$facebook = get_field('facebook', 'options');
-				$instagram = get_field('instagram', 'options');
-				$youtube = get_field('youtube', 'options');
-				$twitter = get_field('twitter', 'options');
-				?>
-				<?php if($facebook): ?>
-					<a href="<?php echo $facebook; ?>" target="_blank">
-						<i class="fa fa-facebook-square"></i>
-					</a>
-				<?php endif; ?>
-
-				<?php if($instagram): ?>
-					<a href="<?php echo $instagram; ?>" target="_blank">
-						<i class="fa fa-instagram"></i>
-					</a>
-				<?php endif; ?>
-
-				<?php if($youtube): ?>
-					<a href="<?php echo $youtube; ?>" target="_blank">
-						<i class="fa fa-youtube"></i>
-					</a>
-				<?php endif; ?>
-
-				<?php if($twitter): ?>
-					<a href="<?php echo $twitter; ?>" target="_blank">
-						<i class="fa fa-twitter-square"></i>
-					</a>
-				<?php endif; ?>
-			</div>
-
-		</nav>
-
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-2 col-xs-4 logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				 		<img class="no-ie img-responsive" src="<?php echo get_template_directory_uri();?>/ui/images/SK_logo_white.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 				    </a>
 				</div>
-				<div class="col-sm-8 col-xs-8">
-					<a id="nav-toggle" href="#" class="no-click visible-sm visible-xs"><span></span></a>
-					<div class="hidden-sm hidden-xs">
-						<?php language_selector_names(); ?>
-					</div>
-				</div>
-				<div class="social col-md-2 hidden-sm hidden-xs">
-
-					<div class="pull-right">
-						<?php
-							$facebook = get_field('facebook', 'options');
-							$instagram = get_field('instagram', 'options');
-							$youtube = get_field('youtube', 'options');
-							$twitter = get_field('twitter', 'options');
-						?>
-						<?php if($facebook): ?>
-							<a href="<?php echo $facebook; ?>" target="_blank">
-								<i class="fa fa-facebook-square"></i>
-							</a>
-						<?php endif; ?>
-
-						<?php if($instagram): ?>
-							<a href="<?php echo $instagram; ?>" target="_blank">
-								<i class="fa fa-instagram"></i>
-							</a>
-						<?php endif; ?>
-
-						<?php if($youtube): ?>
-							<a href="<?php echo $youtube; ?>" target="_blank">
-								<i class="fa fa-youtube"></i>
-							</a>
-						<?php endif; ?>
-
-						<?php if($twitter): ?>
-							<a href="<?php echo $twitter; ?>" target="_blank">
-								<i class="fa fa-twitter-square"></i>
-							</a>
-						<?php endif; ?>
-					</div>
-
+				<div class="col-sm-10 col-xs-8 menu">
+					<a href="#" class="menu-toggle">
+						<i class="burger"><span></span></i>
+					</a>
 				</div>
 			</div>
 		</div>
