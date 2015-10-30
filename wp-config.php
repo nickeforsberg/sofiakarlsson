@@ -70,6 +70,8 @@ $table_prefix  = 'sk14_';
  */
 define('WP_DEBUG', false);
 
+define('WP_MEMORY_LIMIT', '80M');
+
 /* Det var allt, sluta redigera här! Blogga på. */
 
 /** Absoluta sökväg till WordPress-katalogen. */

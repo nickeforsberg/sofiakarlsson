@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+$feature_image = '';
+get_header();
+?>
 <section id="content" role="main">
 
 	<?php if ( have_posts() ) : ?>
