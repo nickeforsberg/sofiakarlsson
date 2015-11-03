@@ -4,7 +4,9 @@
 		?>
 		<?php if( $jumbotron_image ) : ?>
 		<div class="jumbotron">
-			<figure class="background-image" style="background-image:url(<?php echo $jumbotron_image['url']; ?>);"></figure>
+			<figure class="image">
+				<img src="<?php echo $jumbotron_image['url']; ?>" />
+			</figure>
 		</div>
 		<?php endif; ?>
 	<?php endif; ?>

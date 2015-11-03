@@ -86,7 +86,7 @@ p{
 p{margin-bottom: 10px;}
 
 img,
-iframe{max-width: 100%; height: auto}
+iframe{max-width: 100%; height: auto;}
 
 a{
 	color: @white;
@@ -180,7 +180,11 @@ pre{background: transparent; border: none; padding: 0;}
 	}
 	a{display: block;}
 
-	img{width: 642px; height: 168px; margin: 0 auto; display: block; text-align: center;}
+	img{width: 642px; height: 168px; margin: 0 auto; display: block; text-align: center; padding: 0 15px;
+		@media(max-width:568px){
+			padding: 0 30px;
+		}
+	}
 	/* img{margin: 0 auto; display: block; text-align: center; width: 305px; height: 284px;} */
 
 	a.fa{display: block; margin: 20px auto; text-align: center; font-size: 32px; color: @white; border: none; text-decoration: none;
@@ -262,16 +266,13 @@ pre{background: transparent; border: none; padding: 0;}
 .jumbotron{
 	margin: 0;
 	padding: 0;
-	height: 630px;
 	background: @darkBlue;
-	.background-image{
-		height: 100%;
-		.background-size('cover');
-		background-repeat: no-repeat;
-		background-position: center center;
-		@media(max-width:767px){
-			background-position: 50% 50%;
-			.background-size('10%');
+	max-width: 100% !important;
+	height: auto !important;
+	.image{
+		img{
+			max-width: 100%;
+			height: auto;
 		}
 	}
 	@media(max-width:767px){
