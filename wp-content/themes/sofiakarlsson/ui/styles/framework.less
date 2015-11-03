@@ -242,6 +242,35 @@ pre{background: transparent; border: none; padding: 0;}
 			}
 		}
 		.post-date{font-weight: 700;}
+
+		.post-password-form{
+			padding-top: 90px;
+			text-align: center;
+			label{
+				input{
+					color: @darkBlue;
+				}
+				@media(max-width:767px){
+					input{
+						display: block;
+					}
+				}
+			}
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"]{
+				background: @white;
+				border: 0;
+				color: @darkBlue;
+				@media(max-width:767px){
+					display: block;
+					margin: 15px auto;
+					text-align: center;
+				}
+			}
+		}
+
 	}
 }
 
