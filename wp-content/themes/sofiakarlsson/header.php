@@ -148,7 +148,7 @@ endif;
 			<div class="row">
 				<div class="col-sm-10 col-xs-8 logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				 		<img class="no-ie img-responsive" src="<?php echo get_template_directory_uri();?>/ui/images/SK_logo_white.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				 		<img class="no-ie img-responsive" src="<?php echo get_template_directory_uri();?>/ui/images/SK_logo_new.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 				    </a>
 				</div>
 				<div class="col-sm-2 col-xs-4 menu">
