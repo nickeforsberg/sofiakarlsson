@@ -114,6 +114,14 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto;}
 .alignleft {float:left;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto;}
 
+.alignright,
+.alignleft{
+	@media(max-width:767px){
+		float: none !important;
+		margin: 0 auto 15px auto !important;
+	}
+}
+
 pre{background: transparent; border: none; padding: 0;}
 
 .embed-container {
