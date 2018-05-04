@@ -1,0 +1,10 @@
+*.log
+.htaccess
+.DS_Store
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+node_modules
+wp-config.backup
+/wp-config.php
