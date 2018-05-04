@@ -47,7 +47,7 @@
 	</style>
 	<?php endif; ?>
 
-<? endif; ?>
+<?php endif; ?>
 
 </head>
 <body <?php body_class(); ?>>
@@ -55,7 +55,7 @@
 <?php
 $header_scripts = get_field('header_scripts', 'options');
 
-if($header_scripts):
+if( $header_scripts ) :
 	echo $header_scripts;
 endif;
 
@@ -80,7 +80,7 @@ endif;
 
 	<?php endif; ?>
 
-<? endif; ?>
+<?php endif; ?>
 
 <nav class="off-canvas-navigation" role="navigation">
 	<div class="container-fluid scroll">
