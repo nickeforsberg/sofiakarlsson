@@ -12,3 +12,4 @@ node_modules
 *.map
 /readme.html
 /provision/ssl
+/wp-config.php
