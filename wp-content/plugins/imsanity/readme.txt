@@ -1,11 +1,11 @@
 === Imsanity ===
-Contributors: nosilver4u,verysimple
+Contributors: nosilver4u
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MKMQKCBFFG3WW
 Tags: image, scale, resize, space saver, quality
-Requires at least: 4.5
-Tested up to: 5.1
+Requires at least: 5.0
+Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 2.4.2
+Stable tag: 2.5.0
 License: GPLv3
 
 Imsanity automatically resizes huge image uploads. Are contributors uploading huge photos? Tired of manually scaling? Imsanity to the rescue!
@@ -31,6 +31,7 @@ before uploading.
 * Bulk-resize feature to selectively resize existing images
 * Allows configuration of max width/height and jpg quality
 * Optionally converts BMP files to JPG so image can be scaled
+* Option to convert PNG files to JPG format for higher compression
 * Once enabled, Imsanity requires no actions on the part of the user
 * Uses WordPress built-in image scaling functions
 
@@ -134,6 +135,22 @@ Questions may be posted on the support forum at https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.5.0 =
+* added: imsanity_allowed_mimes filter to override the default list of image formats allowed
+* added: imsanity_orientation filter to modify auto-rotation behavior, return 1 to bypass
+* added: imsanity_get_max_width_height filter to customize max width/height
+* added: define network settings as defaults for new sites in multi-site mode
+* fixed: WP threshold of 2560 overrides Imsanity when using larger dimensions
+* fixed: settings link on plugins page broken in some cases
+* fixed: crop filter not applied if max width or height is equal to existing dimension
+* fixed: invalid capabilities used for settings page - props @cfoellmann
+
+= 2.4.3 =
+* changed: default size from 2048 to 1920
+* fixed: WP Import plugin breaks during Media imports
+* fixed: setting a value to 0 causes errors on multi-site
+* fixed: conversion settings not displaying correctly on multi-site
+
 = 2.4.2 =
 * changed: noresize in filename also works in batch processing
 * fixed: error message does not contain filename when file is missing
@@ -142,7 +159,7 @@ Questions may be posted on the support forum at https://wordpress.org/support/pl
 = 2.4.1 =
 * fixed: bulk resizer scan returning incorrect results
 * fixed: sprintf error during resizing and upload
- 
+
 = 2.4.0 =
 * added: deep scanning option for when attachment metadata isn't updating properly
 * fixed: uploads from Gutenberg not detected properly
@@ -152,3 +169,7 @@ Questions may be posted on the support forum at https://wordpress.org/support/pl
 
 = Earlier versions =
 Please refer to the separate changelog.txt file.
+
+== Credits ==
+
+Originally written by Jason Hinkle (RIP). Maintained and developed by [Shane Bishop](https://ewww.io) with special thanks to my [Lord and Savior](https://www.iamsecond.com/).
