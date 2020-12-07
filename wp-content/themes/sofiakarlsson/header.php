@@ -37,7 +37,7 @@
 	<?php if( $slideshow ): ?>
 	<style type="text/css">
 	body{
-		background: url("<?php echo $image_url; ?>") no-repeat center top fixed;
+		background: url("<?php echo $image_url; ?>") no-repeat center center fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;

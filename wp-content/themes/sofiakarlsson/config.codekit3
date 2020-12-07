@@ -195,6 +195,16 @@
 		"oAP": "/single.php",
 		"oF": 0
 		},
+	"/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/style.less": {
 		"aP": 0,
 		"bl": 0,
@@ -1115,6 +1125,22 @@
 		"mS": 0,
 		"oA": 1,
 		"oAP": "/ui/styles/fonts.css",
+		"oF": 0,
+		"oS": 1,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/ui/styles/framework.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 1,
+		"ft": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/ui/styles/framework.css",
 		"oF": 0,
 		"oS": 1,
 		"rwU": 0,
