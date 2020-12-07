@@ -140,9 +140,9 @@ function sk_load_scripts_css(){
     if ( !is_admin() ) {
 
     	$js_arr = array( 'compile' );
-        wp_register_script( 'compile', get_template_directory_uri() . '/ui/scripts/compile.min.js', array( 'jquery'),'1.0', true);
+        wp_register_script( 'compile', get_template_directory_uri() . '/ui/scripts/compile.min.js', array( 'jquery'),'1.1.1', true);
 
-        wp_register_script( 'site', get_template_directory_uri().'/ui/scripts/site.js', $js_arr, '1.0', true );
+        wp_register_script( 'site', get_template_directory_uri().'/ui/scripts/site.js', $js_arr, '1.1.1', true );
         wp_enqueue_script( 'site' );
 
         wp_register_script( 'fancybox', get_template_directory_uri().'/ui/scripts/fancybox/jquery.fancybox.js', $js_arr, '2.1.5', true );
