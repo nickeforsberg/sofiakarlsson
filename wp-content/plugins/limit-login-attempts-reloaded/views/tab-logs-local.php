@@ -60,7 +60,7 @@ $black_list_usernames = ( is_array( $black_list_usernames ) && !empty( $black_li
     <table class="form-table">
         <tr>
             <th scope="row"
-                valign="top"><?php echo __( 'Allow Rules', 'limit-login-attempts-reloaded' ); ?></th>
+                valign="top"><?php echo __( 'Safelist', 'limit-login-attempts-reloaded' ); ?></th>
             <td>
                 <div class="field-col">
                     <p class="description"><?php _e( 'One IP or IP range (1.2.3.4-5.6.7.8) per line', 'limit-login-attempts-reloaded' ); ?></p>
@@ -74,7 +74,7 @@ $black_list_usernames = ( is_array( $black_list_usernames ) && !empty( $black_li
         </tr>
         <tr>
             <th scope="row"
-                valign="top"><?php echo __( 'Deny Rules', 'limit-login-attempts-reloaded' ); ?></th>
+                valign="top"><?php echo __( 'Blocklist', 'limit-login-attempts-reloaded' ); ?></th>
             <td>
                 <div class="field-col">
                     <p class="description"><?php _e( 'One IP or IP range (1.2.3.4-5.6.7.8) per line', 'limit-login-attempts-reloaded' ); ?></p>
@@ -94,6 +94,7 @@ $black_list_usernames = ( is_array( $black_list_usernames ) && !empty( $black_li
 </form>
 <?php
 $log = $this->get_option( 'logged' );
+
 $log = LLA_Helpers::sorted_log_by_date( $log );
 
 $lockouts = (array)$this->get_option('lockouts');
@@ -106,6 +107,10 @@ if( is_array( $log ) && ! empty( $log ) ) { ?>
         <p class="submit">
             <input class="button" name="submit" value="<?php echo __( 'Clear Log', 'limit-login-attempts-reloaded' ); ?>"
                    type="submit"/>
+            <span style="margin-left: 15px;"><?php echo sprintf(
+                    __( 'Receive enhanced logs and visual metrics when you <a href="%s" target="_blank">upgrade to our cloud app</a>', 'limit-login-attempts-reloaded' ),
+                    'https://www.limitloginattempts.com/info.php?from=plugin-clear-log' );
+            ?></span>
         </p>
     </form>
 
