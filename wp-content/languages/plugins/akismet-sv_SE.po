@@ -38,7 +38,7 @@ msgstr "Akismet kunde inte kontrollera den här kommentaren men kommer automatis
 msgid "Comment was caught by %s."
 msgstr "Kommentaren stoppades av %s."
 
-#: class.akismet.php:561
+#: class.akismet.php:575
 msgid "Akismet is not configured. Please enter an API key."
 msgstr "Akismet är inte konfigurerad. Ange en API-nyckel."
 
@@ -94,7 +94,7 @@ msgstr "Akismet integritetsmeddelande"
 msgid "Privacy"
 msgstr "Integritet"
 
-#: class.akismet.php:1500
+#: class.akismet.php:1616
 msgid "This site uses Akismet to reduce spam. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Learn how your comment data is processed</a>."
 msgstr "Denna webbplats använder Akismet för att minska skräppost. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Lär dig hur din kommentardata bearbetas</a>."
 
@@ -102,7 +102,7 @@ msgstr "Denna webbplats använder Akismet för att minska skräppost. <a href=\"
 msgid "We collect information about visitors who comment on Sites that use our Akismet anti-spam service. The information we collect depends on how the User sets up Akismet for the Site, but typically includes the commenter's IP address, user agent, referrer, and Site URL (along with other information directly provided by the commenter such as their name, username, email address, and the comment itself)."
 msgstr "Vi samlar information om besökare som kommenterar på webbplatser som använder vår Akismet anti-skräppost-tjänst. Informationen vi samlar in beror på hur användaren konfigurerar Akismet för webbplatsen, men brukar innehålla kommentatorns IP-adress, användaragent, hänvisare och webbplats-URL (tillsammans med annan information som tillhandahålls direkt av kommentatorn såsom dess namn, användarnamn, e-postadress och själva kommentaren)."
 
-#: class.akismet.php:236
+#: class.akismet.php:250
 msgid "Comment discarded."
 msgstr "Kommentaren har kastats."
 
@@ -191,7 +191,7 @@ msgstr "Vill du <a href=\"%s\">kolla väntande kommentarer</a>?"
 msgid "Akismet is now protecting your site from spam. Happy blogging!"
 msgstr "Nu skyddar Akismet din webbplats från skräppost. Lycka till med bloggandet!"
 
-#: views/notice.php:14 views/setup.php:3
+#: views/setup.php:3 views/notice.php:14
 msgid "Set up your Akismet account"
 msgstr "Konfigurera ditt Akismet-konto"
 
@@ -231,7 +231,7 @@ msgstr[1] "Akismet har kontrollerat %s kommentarer."
 msgid "There were no comments to check. Akismet will only check comments awaiting moderation."
 msgstr "Det finns inga kommentarer att kontrollera. Akismet kommer endast att kontrollera kommentarer som inväntar granskning."
 
-#: class.akismet.php:567
+#: class.akismet.php:581
 msgid "Comment not found."
 msgstr "Kommentaren kunde inte hittas."
 
@@ -572,11 +572,11 @@ msgstr[1] ""
 msgid "Past six months"
 msgstr "Senaste sex månaderna"
 
-#: class.akismet.php:1357
+#: class.akismet.php:1370
 msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
 msgstr "<a href=\"%1$s\">Uppgradera WordPress</a> till en aktuell version eller <a href=\"%2$s\">nedgradera till version 2.4 av tillägget Akismet</a>."
 
-#: class.akismet.php:1357
+#: class.akismet.php:1370
 msgid "Akismet %s requires WordPress %s or higher."
 msgstr "Akismet %s kräver WordPress %s eller senare."
 
